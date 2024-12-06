@@ -1300,249 +1300,94 @@
 <---           Footer           -->
 <--- -------------------------- -*/
 
-/* Mobile */
+/* Mobile - 360px - Contains hover state */
 @media only screen and (min-width: 0rem) {
-  #footer {
-    background: #1c1c1c;
-    padding: (84/16rem) 0 calc(20 / 16 * 1rem);
-    font-size: ~"min(4vw, 1.2em)";
+  #cs-footer-107 {
+    padding: (40/16rem) (16/16rem);
+    background: #1a1a1a;
 
-    .left-section {
+    .cs-container {
+      width: 100%;
+      max-width: (1280/16rem);
       margin: auto;
-      margin-bottom: (50/16rem);
-      text-align: center;
-      .logo {
-        display: inline-block;
-        margin: auto;
-        margin-bottom: (30/16em);
-        height: (32/16em);
-        width: auto;
-        text-align: center;
-
-        img {
-          display: block;
-          height: 100%;
-          width: auto;
-        }
-      }
-
-      p {
-        opacity: 0.9;
-        margin: auto;
-        width: 100%;
-        font-size: (14/16rem);
-        line-height: (27/14rem);
-        color: #fff;
-        text-align: center;
-      }
     }
 
-    .right-section {
-      margin: auto;
-      max-width: (407/16rem);
-      width: 96%;
-      .lists {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        margin: auto;
-        max-width: (307/16rem);
-        width: 96%;
-        ul {
-          margin-top: 0;
-          margin-bottom: 0;
-          padding: 0;
-
-          li {
-            opacity: 0.9;
-            margin-bottom: (12/16rem);
-            list-style: none;
-            font-size: (18/16rem);
-            color: #fff;
-
-            a {
-              text-decoration: none;
-              line-height: (21/18em);
-              color: #fff;
-              transition: color 0.3s;
-              &:hover {
-                color: var(--primary);
-              }
-            }
-          }
-          h2 {
-            position: relative;
-            margin-bottom: (37/16rem);
-            text-transform: uppercase;
-            font-size: (18/16rem);
-            line-height: (21/18em);
-            font-weight: bold;
-            color: #fff;
-
-            &:before {
-              position: absolute;
-              bottom: calc(-16 / 16 * 1rem);
-              left: 0;
-              content: "";
-              opacity: 1;
-              display: block;
-              background: var(--primary);
-              height: (2/16rem);
-              width: (97/16rem);
-            }
-          }
-
-          &:nth-of-type(3) {
-            margin-top: (50/16rem);
-            li {
-              display: flex;
-              justify-content: flex-start;
-              align-items: center;
-              margin-bottom: (16/16rem);
-
-              &:last-of-type {
-                margin-bottom: 0;
-              }
-            }
-          }
-        }
-      }
-
-      .buttons {
-        display: flex;
-        justify-content: center;
-      }
-
-      .cs-button-solid {
-        margin: 0;
-        height: (53/16rem);
-        width: (250/16rem);
-        padding-top: (3/16rem);
-      }
-    }
-
-    .credit {
-      margin: auto;
-      margin-top: (100/16rem);
-      width: 96%;
-      font-size: (16/16rem);
-      line-height: (36/16rem);
-      color: #fff;
-      text-align: center;
-
-      a {
-        text-decoration: none;
-        font-size: (16/16rem);
-        color: var(--primary);
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-
-      .copyright {
-        display: block;
-        font-size: (16/16rem);
-      }
-    }
-  }
-}
-
-/* Small Desktop */
-@media only screen and (min-width: 64rem) {
-  #footer {
-    font-size: ~"min(1.2vw, 1em)";
-    .container {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: space-between;
-      margin: auto;
-      max-width: (1320/16rem);
-      width: 96%;
+    .cs-ul {
       padding: 0;
+      margin: auto;
+      display: flex;
+      /* make flexbox arrange top to bottom */
+      flex-direction: column;
+      align-items: center;
+      gap: (20/16rem);
     }
 
-    .left-section {
+    .cs-li {
+      list-style: none;
+      text-align: center;
       margin: 0;
-      width: (409/16rem);
-      text-align: left;
-
-      .logo {
-        margin-left: 0;
-        height: (40/16rem);
-        text-align: left;
-      }
-
-      p {
-        margin-left: 0;
-        text-align: left;
-      }
     }
 
-    .right-section {
-      margin: 0;
-      max-width: none;
-      width: (609/16rem);
+    .cs-copyright {
+      font-size: (15/16rem);
+      line-height: 1.5em;
+      margin-top: (20/16rem);
+      color: #a0a3bd;
+      display: block;
+      /* send to first position at the bottom */
+      order: 1;
+      /* prevents flexbox from squishing it */
+      flex: none;
+    }
 
-      .lists {
-        margin: 0;
-        max-width: (769/16rem);
-        width: 96%;
+    .cs-link {
+      /* 15px - 17px */
+      font-size: clamp(0.9375rem, 2vw, 1.0625rem);
+      line-height: 1.5em;
+      text-decoration: none;
+      font-weight: 700;
+      color: var(--bodyTextColorWhite);
+      position: relative;
 
-        ul {
-          li {
-            a {
-              position: relative;
-
-              &:before {
-                position: absolute;
-                bottom: calc(-3 / 16 * 1rem);
-                left: 0;
-                content: "";
-                opacity: 1;
-                display: block;
-                background: var(--primary);
-                height: (2/16rem);
-                width: 0%;
-                transition: width 0.3s;
-              }
-
-              &:hover {
-                &:before {
-                  width: 100%;
-                }
-              }
-            }
-          }
-          &:nth-of-type(3) {
-            margin-top: 0;
-
-            li:first-of-type {
-              margin-bottom: 0;
-            }
-          }
+      &:hover {
+        &:before {
+          width: 100%;
         }
       }
 
-      .buttons {
-        justify-content: flex-start;
-      }
-    }
-
-    .credit {
-      .copyright {
-        display: inline-block;
+      &:before {
+        /* top right box */
+        content: "";
+        width: 0%;
+        height: (3/16rem);
+        background: var(--bodyTextColorWhite);
+        opacity: 1;
+        position: absolute;
+        display: block;
+        bottom: (-2/16rem);
+        left: 0;
+        transition: width 0.3s;
       }
     }
   }
 }
 
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-  body.dark-mode {
-    #footer {
-      background: #061623;
+/* Tablet - 700px */
+@media only screen and (min-width: 43.75rem) {
+  #cs-footer-107 {
+    .cs-ul {
+      flex-direction: row;
+      /* push everything to the left */
+      justify-content: flex-start;
+      /* 44px - 88px */
+      gap: clamp(2.75rem, 7vw, 5.5rem);
+    }
+
+    .cs-copyright {
+      /* marign auto on the left pushes away from the rest of the flex children */
+      margin: 0 0 0 auto;
+      /* send to the right most position */
+      order: 2;
     }
   }
 }
