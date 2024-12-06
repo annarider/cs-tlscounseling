@@ -134,6 +134,226 @@
 }
 
 /*-- -------------------------- -->
+<---          Services          -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #services-38 {
+    padding: var(--sectionPadding);
+
+    .cs-container {
+      width: 100%;
+      /* changes to 1280pc at tablet */
+      max-width: (550/16rem);
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* 48px - 64px */
+      gap: clamp(3rem, 6vw, 4rem);
+    }
+
+    .cs-content {
+      /* in case you add a .cs-content to this stitch */
+      /* set text align to left if content needs to be left aligned */
+      text-align: center;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      /* centers content horizontally, set to flex-start to left align */
+      align-items: center;
+    }
+
+    .cs-card-group {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      column-gap: (20/16rem);
+      row-gap: (60/16rem);
+    }
+
+    .cs-item {
+      list-style: none;
+      width: 100%;
+      margin: 0;
+
+      &:hover {
+        .cs-picture {
+          &:before {
+            height: 100%;
+          }
+
+          img {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+
+    .cs-picture {
+      aspect-ratio: 328/360;
+      position: relative;
+      display: block;
+      /* Keeps image from bleeding outside the picture element */
+      overflow: hidden;
+      &:before {
+        content: "";
+        position: absolute;
+        display: block;
+        height: 0%;
+        width: 100%;
+        background: var(--primaryLight);
+        opacity: 0.8;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        transition: height 0.3s;
+      }
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        /* Makes img tag act like a background image */
+        object-fit: cover;
+        transition: transform 0.7s;
+      }
+    }
+
+    .cs-box {
+      /* Centers the button */
+      text-align: center;
+      width: 90%;
+      margin: 0 auto;
+      /* -32px to 48px */
+      margin-top: ~"calc(clamp(2rem, 7vw, 3rem)*-1)";
+      padding: (24/16rem) (16/16rem) 0;
+      background: #fff;
+      position: relative;
+      z-index: 10;
+      /* Prevents padding from adding to the total width */
+      box-sizing: border-box;
+    }
+
+    .cs-h3 {
+      /* 20px - 25px */
+      font-size: clamp(1.25rem, 2vw, 1.5625rem);
+      text-align: center;
+      line-height: 1.2em;
+      font-weight: bold;
+      color: var(--headerColor);
+      margin: 0 0 (16/16rem);
+    }
+
+    .cs-item-text {
+      font-size: (16/16rem);
+      line-height: 1.5em;
+      margin: 0 0 (4/16rem);
+      padding: 0;
+      color: var(--bodyTextColor);
+    }
+
+    .cs-link {
+      font-size: (16/16rem);
+      /* 46px - 56px */
+      line-height: clamp(2.875em, 5.5vw, 3.5em);
+      text-decoration: none;
+      font-weight: 700;
+      margin: auto;
+      color: var(--primary);
+      background-color: transparent;
+      border-radius: (4/16rem);
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      &:before {
+        content: "";
+        position: absolute;
+        display: block;
+        height: (3/16rem);
+        width: 0%;
+        background: var(--primary);
+        opacity: 1;
+        bottom: (6/16rem);
+        left: 0;
+        z-index: -1;
+        border-radius: (4/16rem);
+        transition: width 0.3s;
+      }
+      &:hover {
+        &:before {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #services-38 {
+    .cs-container {
+      max-width: (1280/16rem);
+    }
+
+    .cs-card-group {
+      flex-direction: row;
+      align-items: stretch;
+    }
+
+    .cs-item {
+      margin: 0;
+    }
+
+    .cs-picture {
+      /* 360px - 430px */
+      height: clamp(22.5rem, 42vw, 26.875rem);
+      /* reset aspect ratio, don't need it anymore */
+      aspect-ratio: initial;
+    }
+
+    .cs-box {
+      width: 90%;
+      padding: (24/16rem) (12/16rem);
+    }
+
+    .cs-h3 {
+      /* force heading to 2 lines for consistent spacing */
+      span {
+        display: block;
+      }
+    }
+  }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode {
+    #services-38 {
+      .cs-box {
+        background: var(--dark);
+      }
+
+      .cs-h3,
+      .cs-item-text {
+        color: var(--bodyTextColorWhite);
+      }
+
+      .cs-link {
+        color: var(--primaryLight);
+      }
+    }
+  }
+}
+
+/*-- -------------------------- -->
 <---       Side By Side         -->
 <--- -------------------------- -*/
 
