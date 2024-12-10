@@ -55,7 +55,6 @@
     z-index: 1;
     position: relative;
     display: inline-block;
-    color: var(--bodyTextColorWhite);
     background-color: var(--primary);
     width: auto;
     padding: 0 1.875rem;
@@ -64,7 +63,7 @@
     font-size: 1rem;
     line-height: 3.125em;
     font-weight: bold;
-    color: #0c4a6e;
+    color: #fff;
     transition: color 0.3s;
     transition-delay: 0.1s;
     text-align: center;
@@ -209,6 +208,8 @@
   body.dark-mode #dark-mode-toggle .cs-sun {
     opacity: 1;
     transform: translate(-50%, -50%);
+    fill: gold;
+    stroke: #fff;
   }
   body.dark-mode #dark-mode-toggle .cs-moon {
     opacity: 0;
