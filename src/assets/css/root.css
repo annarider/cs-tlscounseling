@@ -55,6 +55,7 @@
     z-index: 1;
     position: relative;
     display: inline-block;
+    color: #fff;
     background-color: var(--primary);
     width: auto;
     padding: 0 1.875rem;
@@ -63,7 +64,6 @@
     font-size: 1rem;
     line-height: 3.125em;
     font-weight: bold;
-    color: #fff;
     transition: color 0.3s;
     transition-delay: 0.1s;
     text-align: center;
@@ -82,7 +82,7 @@
     content: "";
     opacity: 1;
     display: block;
-    background-color: #0f172a;
+    background-color: var(--secondaryDark);
     height: 100%;
     width: 0;
     transition: width 0.3s;
@@ -1066,7 +1066,7 @@
     display: block;
     height: 100%;
     width: 100%;
-    background: #1a1a1a;
+    background: var(--secondaryDark);
     opacity: 0.88;
     top: 0;
     left: 0;
@@ -1102,7 +1102,7 @@
 @media only screen and (min-width: 0rem) {
   #cs-footer-107 {
     padding: 2.5rem 1rem;
-    background: #1a1a1a;
+    background: var(--secondaryDark);
   }
   #cs-footer-107 .cs-container {
     width: 100%;
@@ -1127,7 +1127,7 @@
     font-size: 0.9375rem;
     line-height: 1.5em;
     margin-top: 1.25rem;
-    color: #a0a3bd;
+    color: var(--bodyTextColorWhite);
     display: block;
     /* send to first position at the bottom */
     order: 1;
