@@ -834,6 +834,14 @@
   body.dark-mode #cs-navigation .cs-li-link:before {
     background-color: var(--primaryLight);
   }
+  body.dark-mode .cs-button-solid:before {
+    background: var(--buttonHoverDark);
+    /* Change the transition color */
+  }
+  body.dark-mode .cs-button-solid:hover {
+    color: #fff;
+    /* Ensure text remains visible */
+  }
 }
 /*-- -------------------------- -->
 <---   Interior Page Header     -->
