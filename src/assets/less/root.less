@@ -249,23 +249,6 @@
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-  body.dark-mode {
-    #dark-mode-toggle {
-      .cs-sun {
-        opacity: 1;
-        transform: translate(-50%, -50%);
-        fill: gold;
-        stroke: #fff;
-      }
-
-      .cs-moon {
-        opacity: 0;
-        transform: translate(-50%, -150%);
-        fill: #fff;
-      }
-    }
-  }
-
   #dark-mode-toggle {
     z-index: 1000;
     position: absolute;
@@ -278,10 +261,14 @@
     width: (48/16rem);
     overflow: hidden;
     padding: 0;
+    isolation: isolate;
+
+    &.transitioning {
+      pointer-events: none;
+    }
 
     img,
     svg {
-      //center image inside button
       position: absolute;
       top: 50%;
       left: 50%;
@@ -289,22 +276,43 @@
       height: (20/16rem);
       width: (20/16rem);
       pointer-events: none;
+      will-change: transform, opacity;
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
     }
 
     .cs-moon {
       z-index: 2;
-      // Transition properties
-      transition: transform 0.3s, opacity 0.3s;
-
-      // fill: yellow; --> uncomment to change the color of the moon if needed
+      opacity: 1;
+      transform: translate(-50%, -50%);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      pointer-events: none;
     }
 
     .cs-sun {
       z-index: 1;
       opacity: 0;
-      // Transition property
       transform: translate(-50%, 100%);
-      transition: transform 0.3s, opacity 0.3s;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      pointer-events: none;
+    }
+  }
+
+  body.dark-mode {
+    #cs-navigation {
+      #dark-mode-toggle {
+        .cs-sun {
+          opacity: 1;
+          transform: translate(-50%, -50%);
+          fill: gold;
+          stroke: #fff;
+        }
+
+        .cs-moon {
+          opacity: 0;
+          transform: translate(-50%, -150%);
+        }
+      }
     }
   }
 }
