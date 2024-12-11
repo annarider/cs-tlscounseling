@@ -1,0 +1,309 @@
+<!-- A fully fleshed-out <head>, dynamically changing based on client.json and the page front matter -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Standard meta tags -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Lorem markdownum tardantis unam mitissima dissimulator inposuit   corpus sintque tura tremenda, nec coetum." />
+    <meta name="keywords" content="" />
+    <link rel="canonical" href="https://www.example.com/blog/acuti-modo/" />
+
+    <!--Social Media Display-->
+    <meta property="og:title" content="Acuti modo" />
+    <meta property="og:description" content="Lorem markdownum tardantis unam mitissima dissimulator inposuit   corpus sintque tura tremenda, nec coetum." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.example.com/blog/acuti-modo/" />
+    <meta property="og:image" content="/assets/images/logo-small.png" />
+    <meta
+      property="og:image:secure_url"
+      content="/assets/images/logo-small.png"
+    />
+
+    <!--Favicons-->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicons/favicon-32x32.png?v1"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/favicons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/assets/favicons/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Preloads -->
+    <link rel="preload" as="image" href="/assets/svg/logo-lpd-white.svg" />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="/assets/fonts/roboto-v29-latin-regular.woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="/assets/fonts/roboto-v29-latin-700.woff2"
+      crossorigin
+    />
+
+    <!-- Preload an image - tag not rendered if preloadImg is blank to stop console errors -->
+    
+    <link rel="preload" as="image" href="/assets/images/blog/landing.jpg" />
+    
+
+    <!-- Sitewide Stylesheets and Scripts -->
+    <link rel="stylesheet" href="/assets/css/root.css" />
+    <link rel="stylesheet" href="/assets/css/dark.css" />
+    <script defer src="/assets/js/dark.js"></script>
+    <script defer src="/assets/js/nav.js"></script>
+
+    
+    <link rel="stylesheet" href="/assets/css/blog.css">
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Acuti modo",
+            
+                "image": ["/assets/images/blog/landing.jpg"],
+            
+            "datePublished": "Jun 8, 2023",
+            
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "Code Stitch Web Designs"
+                },
+            
+            
+                "author": [
+                    {
+                        "@type": "Person",
+                        "name": "Code Stitch"
+                    }
+                ],
+            
+            "articleBody": "Lorem markdownum tardantis unam mitissima dissimulator inposuit   corpus sintque tura tremenda, nec coetum.",
+            "url": "https://www.example.com/blog/acuti-modo/",
+            "articleSection": "sitemap,post,post"
+        }
+    </script>
+
+
+    <title>Acuti modo</title>
+  </head>
+  <body>
+    <!--Screen reader skip main nav-->
+    <a class="skip" aria-label="skip to main content" href="#main" tabindex="1"
+      >Click To Skip To Main Content</a
+    >
+
+    <!-- ============================================ -->
+<!--                 Navigation                   -->
+<!-- ============================================ -->
+
+<header id="cs-navigation">
+  <div class="cs-container">
+    <!--Nav Logo-->
+    <a href="/" class="cs-logo" aria-label="back to home">
+      <img
+        src="/assets/svg/logo-lpd-color.svg"
+        alt="logo"
+        width="210"
+        height="29"
+        aria-hidden="true"
+        decoding="async"
+      />
+    </a>
+    <!--Navigation List-->
+    <nav class="cs-nav" role="navigation">
+      <!--Mobile Nav Toggle-->
+      <button class="cs-toggle" aria-label="mobile menu toggle">
+        <div class="cs-box" aria-hidden="true">
+          <span class="cs-line cs-line1" aria-hidden="true"></span>
+          <span class="cs-line cs-line2" aria-hidden="true"></span>
+          <span class="cs-line cs-line3" aria-hidden="true"></span>
+        </div>
+      </button>
+      <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
+      <div class="cs-ul-wrapper">
+        <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
+          <li class="cs-li">
+            <a href="/" class="cs-li-link"> Home </a>
+          </li>
+          <li class="cs-li">
+            <a href="/about" class="cs-li-link"> About </a>
+          </li>
+          <li class="cs-li">
+            <a href="/services" class="cs-li-link"> Services </a>
+          </li>
+          <li class="cs-li">
+            <a href="/faq" class="cs-li-link"> FAQ </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <a href="/contact" class="cs-button-solid cs-nav-button">Contact Us</a>
+    <!--Dark Mode toggle, uncomment button code if you want to enable a dark mode toggle-->
+    <button id="dark-mode-toggle" aria-label="dark mode toggle">
+      <svg class="cs-moon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+      </svg>
+      
+      </svg>
+      <svg class="cs-sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+      </svg>      
+    </button>
+  </div>
+</header>
+
+    <main id="main">
+    <!-- ============================================ -->
+    <!--                    LANDING                   -->
+    <!-- ============================================ -->
+
+    <section id="int-hero">
+        <picture>
+            <source media="(max-width: 600px)" srcset="/assets/images/cabinets2-m.jpg">
+            <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg">
+            <img aria-hidden="true" decoding="async" src="/assets/images/cabinets2.jpg" alt="kitchen cabinets" loading="eager" width="2500" height="1667">
+        </picture>
+    </section>
+
+    <!-- ============================================ -->
+    <!--              Main Blog Content               -->
+    <!-- ============================================ -->
+
+    <div class="blog-container main-content-wrapper">
+        <!--Main content -->
+        <div class="main-content">
+            <!-- ============================================ -->
+            <!--                  Blog Article                -->
+            <!-- ============================================ -->
+
+            <article class="blog-article">
+                <!--Main Article Image-->
+                <picture class="blog-mainImage">
+                    <img src="/assets/images/blog/landing.jpg" alt="Kitchen" width="795" height="400" decoding="async"/>
+                </picture>
+
+                <!--Article Info-->
+                <div class="article-group">
+                    <h1 class="blog-h1">Acuti modo</h1>
+                    <div class="blog-authorGroup">
+                        <!--Author Image-->
+                        <picture class="blog-author-img">
+                            <img
+                            src="/assets/svgs/profile.svg"
+                            alt="house"
+                            width="32"
+                            height="32"
+                            decoding="async">
+                        </picture>
+                        <span class="blog-author">Code Stitch</span>
+                        <span aria-hidden="true" class="blog-dot"></span>
+                        <!--Blog Date-->
+                        <span class="blog-date">Jun 8, 2023</span>
+                    </div>
+                </div>
+                <section id="blog-content">
+                    <h2>Lacerans aliter tetigit praeterea rite</h2>
+<p>Lorem markdownum tardantis unam mitissima dissimulator inposuit corpus sintque tura tremenda, nec coetum. Est limen Isthmo sagittas patres emerguntque anxia <a href="http://www.morte.com/parvo.html">defenderet</a> illi, est.</p>
+<ul>
+<li>Sua ille submittere viribus verba visa Myconon</li>
+<li>Qvem nec</li>
+<li>Frena prior rauco iaculum enim</li>
+<li>Modo referat</li>
+<li>Tibi mihi sumit bibit censuque licentia consistite</li>
+<li>Sumptis Iunonis muneris quiete haec tori</li>
+</ul>
+<h2>Aut pedum tendit ut raptae</h2>
+<p>Est vicinia, est herba ut et <a href="http://pars.net/iamcum">duro</a>, agnosse dicitur spectator gracili aquarum. <strong>Amore adfer metam</strong> queri quartus cunctas ego.</p>
+<p>Tectis Iovemque moriens fraternaeque Gorgonei equosque Oceanumque, huius corporis, contigerant metu vecta patietur versasse. Et undis superbus? Cura cortice saepe admisitque tamen iuvenum, vivere Lemnicolae est vidi dilapsa ianua gelidum, Ismenus. Est dic lacertos regnum quippe certo, ut vultus tollere.</p>
+<h2>Iacentes temptabat</h2>
+<p>Novissima adfixa declinat Labros et librat herbida se sacro amplectitur moenia: parcite nam quoque pugnat non quam tot. Sole et enim inundet? Ecce urbesque <em>obliquis</em>, non patietur fuga fixa feros horruit <a href="http://www.postquam.org/gravatumiphis.html">ferox tui</a>, de.</p>
+<ol>
+<li>Argentea ait exstabant trames</li>
+<li>Nocti liquidum Minervae Cerberus quas</li>
+<li>Neque removente</li>
+</ol>
+<h2>Respondere prior si ingemit bellare</h2>
+<p>Cadme tetigit in luctus minor mulcebunt tempora, utque sua semper essem cultrosque <strong>enses</strong> praecipitem hunc <strong>vestris</strong>. Restantem iussit poena; quod vendit electarumque mendacem nec sedens quidem Iovi torta cruribus, et? Venit alvum <em>anima</em>! Manibusque idem <em>Aconteus ducat</em> multamque et tibi Siphnon; mitissima devenit aut poscitur flumina nymphas revocare obstitit Lyciaeque Meleagros fors.</p>
+<p>Orbem dolendi corpore hic <a href="http://paruit.com/sineloqui.html">flamma vertere recurvas</a>, da pedes calido unus armis relinquunt, <a href="http://alumnaesibi.com/unda">flores Minervae formam</a>. Caelo <a href="http://invirginibus.org/trahuntur">inposuit</a> viribus semper, vesci excipit facta putes. Patitur attonitos acutior dum liquefacta nostra habebat. Duabus victus me suae viscera natorum ferox contulerat, de tuus Pasiphaeia ruunt protinus?</p>
+<p><em>Multis soror</em>, mundi paruerit quietem in, temeraria velantque guttura temerarius candens prostravit vera operatus, ut fecimus. Gyaros quaesiti in, a frustra, iacentia hosti. Suae iamque. Sustinet crimen toris, oves hanc est causa tum paravi phocen in natas, crudelis infra erat minimo? Inquit et <strong>loqui studiisque Alpheos</strong> venti spectata velocior <a href="http://www.animiquetantaque.net/atulterius.aspx">fida</a> Iove habet Cometen rediit; tulisset!</p>
+
+                </section>
+            </article>
+        </div>
+        <!-- End .main-content -->
+
+        <!-- ============================================ -->
+<!--                Featured Posts                -->
+<!-- ============================================ -->
+
+<div class="blog-sidebar">
+    <!--Featured-->
+    <div class="blog-featured-group">
+        <span class="blog-header">Featured Posts</span><a class="blog-feature" href="/blog/canitiem-saxa/">
+                <picture class="blog-featureImage">
+                    <img
+                        src="/assets/images/blog/landing.jpg" 
+                        alt="Kitchen"
+                        width="60"
+                        height="60"
+                        decoding="async">
+                </picture>
+                <div class="content-group">
+                    <h3 class="feature-h3">Canitiem Saxa</h3>
+                    <span class="feature-date">Jun 8, 2023</span>
+                </div>
+            </a></div>
+    <!--Add anything else in the sidebar below-->
+</div>
+    </div>
+</main>
+    <!-- ============================================ -->
+<!--                   Footer                     -->
+<!-- ============================================ -->
+
+<footer id="cs-footer-107">
+  <div class="cs-container">
+    <ul class="cs-ul">
+      <li class="cs-li cs-copyright">Handcrafted by Lucky Pixels Design</li>
+      <li class="cs-li">
+        <a href="/" class="cs-link">Home</a>
+      </li>
+      <li class="cs-li">
+        <a href="/about" class="cs-link">About</a>
+      </li>
+      <li class="cs-li">
+        <a href="/services" class="cs-link">Services</a>
+      </li>
+      <li class="cs-li">
+        <a href="/faq" class="cs-link">FAQ</a>
+      </li>
+      <li class="cs-li">
+        <a href="/contact" class="cs-link">Contact</a>
+      </li>
+    </ul>
+  </div>
+</footer>
+
+  </body>
+</html>

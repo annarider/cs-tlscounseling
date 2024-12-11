@@ -1,0 +1,307 @@
+/* PAGE-SPECIFIC STYLES FOR THE ABOUT PAGE */
+
+/*-- -------------------------- -->
+<---        Content Page        -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #content-page-713 {
+    padding: var(--sectionPadding);
+    background-color: #fff;
+    /* clips the wave background from causing overflow issues when it goes off screen */
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+
+    .cs-container {
+      width: 100%;
+      max-width: (1280/16rem);
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* 48px - 64px */
+      gap: clamp(3rem, 6vw, 4rem);
+      position: relative;
+    }
+
+    .cs-content {
+      /* set text align to left if content needs to be left aligned */
+      text-align: left;
+      width: 100%;
+      max-width: (738/16rem);
+      display: flex;
+      flex-direction: column;
+      /* centers content horizontally, set to flex-start to left align */
+      align-items: flex-start;
+
+      img {
+        width: 100%;
+        height: auto;
+        margin: (16/16rem) 0;
+        display: block;
+      }
+    }
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: 700;
+      text-align: inherit;
+      margin: 0 0 (16/16rem) 0;
+      color: var(--headerColor);
+    }
+
+    h2 {
+      font-size: (32/16rem);
+      margin-top: (32/16rem);
+    }
+
+    h3 {
+      font-size: (24/16rem);
+      color: var(--primary);
+    }
+
+    h4,
+    h5,
+    h6 {
+      font-size: (20/16rem);
+    }
+
+    .cs-button-solid {
+      margin-bottom: (32/16rem);
+    }
+
+    .cs-color {
+      color: var(--primary);
+    }
+
+    p {
+      font-size: var(--bodyFontSize);
+      line-height: 1.5em;
+      text-align: inherit;
+      width: 100%;
+      margin: 0 0 (16/16rem) 0;
+      color: var(--bodyTextColor);
+      &:last-of-type {
+        margin-bottom: (32/16rem);
+      }
+
+      a {
+        font-size: inherit;
+        line-height: inherit;
+        text-decoration: underline;
+        color: var(--primary);
+      }
+    }
+
+    ol,
+    ul {
+      padding-left: (24/16rem);
+      margin: 0 0 (32/16rem) 0;
+      color: var(--bodyTextColor);
+      display: flex;
+      flex-direction: column;
+      gap: (16/16rem);
+    }
+
+    ul {
+      li {
+        list-style: none;
+        color: inherit;
+        position: relative;
+
+        &:before {
+          /* custom list bullet */
+          content: "";
+          width: 3px;
+          height: 3px;
+          background: currentColor;
+          opacity: 1;
+          border-radius: 50%;
+          position: absolute;
+          display: block;
+          top: (10/16rem);
+          left: (-12/16rem);
+        }
+      }
+    }
+
+    .cs-image-group {
+      /* scales the whole section down and ties the font size to the vw and stops at 70% of the vale of 1em, changes at desktop */
+      font-size: ~"min(1vw, 1em)";
+      /* everything inside this box is in ems so we can scale it all down proportionally with a font size */
+      width: (542/16em);
+      height: (773/16em);
+      display: none;
+      /* prevents flexbox from squishing it */
+      flex: none;
+      position: relative;
+      /* flips it horizontally */
+      transform: scaleX(-1);
+    }
+
+    .cs-picture {
+      width: (542/16em);
+      height: (647/16em);
+      border-radius: (285/16em);
+      border: (12/16em) solid #fff;
+      background-color: #f7f7f7;
+      /* prevents border from affecting height and width */
+      box-sizing: border-box;
+      /* clips img tag corners */
+      overflow: hidden;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      img {
+        width: 100%;
+        height: 100%;
+        /* makes it act like a background image */
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* flips the image to its original orientation */
+        transform: scaleX(-1);
+      }
+    }
+
+    .cs-flower {
+      width: (362/16em);
+      height: auto;
+      display: block;
+      position: absolute;
+      bottom: (-38/16em);
+      right: (-48/16em);
+      z-index: -1;
+      transform: rotate(142deg);
+    }
+
+    .cs-sense {
+      width: (80/16em);
+      height: auto;
+      position: absolute;
+      top: (-4/16em);
+      left: (10/16em);
+      transform: rotate(90deg);
+    }
+
+    .cs-background {
+      display: none;
+    }
+  }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #content-page-713 {
+    .cs-container {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    .cs-image-group {
+      display: block;
+    }
+
+    .cs-background {
+      width: 20%;
+      height: 100%;
+      background-color: #f7f7f7;
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: -1;
+
+      img {
+        width: 100%;
+        height: 100%;
+        opacity: 0.2;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+    }
+  }
+}
+
+/* Large Desktop 1300px */
+@media only screen and (min-width: 81.25rem) {
+  #content-page-713 {
+    .cs-image-group {
+      /* position absolute so we can have it overflow the container as seen in the design. */
+      font-size: inherit;
+      position: absolute;
+      top: (0/16rem);
+      right: (-100/16rem);
+    }
+
+    .cs-background {
+      width: 50%;
+      /* with the left edge always positioned at the center line, we push left of the center line by 335px.  This ensures that this element will stay exactly in this position no matter how wide the screen gets */
+      margin-left: (335/16rem);
+      right: auto;
+      /* sets the left edge of the element to be at the center line */
+      left: 50%;
+    }
+  }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode {
+    #content-page-713 {
+      background-color: var(--dark);
+
+      .cs-title,
+      .cs-text,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      li,
+      p {
+        color: var(--bodyTextColorWhite);
+      }
+      .cs-color,
+      a {
+        color: var(--primaryLight);
+      }
+
+      p,
+      li {
+        color: #ebebeb;
+      }
+
+      .cs-picture {
+        border-color: var(--dark);
+        background-color: var(--dark);
+      }
+
+      .cs-flower {
+        filter: brightness(50%);
+      }
+
+      .cs-sense {
+        filter: brightness(150%);
+      }
+
+      .cs-background {
+        background-color: var(--medium);
+        filter: brightness(70%);
+        img {
+          opacity: 0.1;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,572 @@
+<!-- A fully fleshed-out <head>, dynamically changing based on client.json and the page front matter -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Standard meta tags -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Lucky Pixels Design turns online searches into clients for small, local businesses." />
+    <meta name="keywords" content="" />
+    <link rel="canonical" href="https://www.example.com/" />
+
+    <!--Social Media Display-->
+    <meta property="og:title" content="Lucky Pixels Design | Web Designs for Small Businesses | Boulder, CO" />
+    <meta property="og:description" content="Lucky Pixels Design turns online searches into clients for small, local businesses." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.example.com/" />
+    <meta property="og:image" content="/assets/images/logo-small.png" />
+    <meta
+      property="og:image:secure_url"
+      content="/assets/images/logo-small.png"
+    />
+
+    <!--Favicons-->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicons/favicon-32x32.png?v1"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/favicons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/assets/favicons/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Preloads -->
+    <link rel="preload" as="image" href="/assets/svg/logo-lpd-white.svg" />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="/assets/fonts/roboto-v29-latin-regular.woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="/assets/fonts/roboto-v29-latin-700.woff2"
+      crossorigin
+    />
+
+    <!-- Preload an image - tag not rendered if preloadImg is blank to stop console errors -->
+    
+    <link rel="preload" as="image" href="/assets/images/landing.jpg" />
+    
+
+    <!-- Sitewide Stylesheets and Scripts -->
+    <link rel="stylesheet" href="/assets/css/root.css" />
+    <link rel="stylesheet" href="/assets/css/dark.css" />
+    <script defer src="/assets/js/dark.js"></script>
+    <script defer src="/assets/js/nav.js"></script>
+
+    
+
+<link rel="stylesheet" href="/assets/css/local.css" />
+<link rel="stylesheet" href="/assets/css/critical.css" />
+
+<!-- Script for Netlify Identity -->
+<script
+  defer
+  src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+></script>
+<script defer>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", (user) => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+
+<!-- JSON Schema Markup -->
+<script type="application/ld+json">
+  {
+      "@context": "http://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Code Stitch Web Designs",
+      "image": "/assets/images/landing.jpg",
+      "telephone": "(555) 779-4407",
+      "email": "help@codestitch.app",
+      
+          "address": {
+              "@type": "PostalAddress",
+                  "streetAddress": "First Address Line, Second Address Line"
+              
+              ,
+                  "addressLocality": "Denver"
+              
+              ,
+                  "addressRegion": "CO"
+              
+              ,
+                  "postalCode": "80206"
+              
+              ,
+                  "addressCountry": "US"
+              
+          },
+      
+      "url": "https://www.example.com/",
+      
+          "sameAs": [
+                  
+                  "https://www.facebook.com/"
+              
+                  ,
+                  "https://www.instagram.com/"
+              ]
+      
+  }
+</script>
+
+
+    <title>Lucky Pixels Design | Web Designs for Small Businesses | Boulder, CO</title>
+  </head>
+  <body>
+    <!--Screen reader skip main nav-->
+    <a class="skip" aria-label="skip to main content" href="#main" tabindex="1"
+      >Click To Skip To Main Content</a
+    >
+
+    <!-- ============================================ -->
+<!--                 Navigation                   -->
+<!-- ============================================ -->
+
+<header id="cs-navigation">
+  <div class="cs-container">
+    <!--Nav Logo-->
+    <a href="/" class="cs-logo" aria-label="back to home">
+      <img
+        src="/assets/svg/logo-lpd-color.svg"
+        alt="logo"
+        width="210"
+        height="29"
+        aria-hidden="true"
+        decoding="async"
+      />
+    </a>
+    <!--Navigation List-->
+    <nav class="cs-nav" role="navigation">
+      <!--Mobile Nav Toggle-->
+      <button class="cs-toggle" aria-label="mobile menu toggle">
+        <div class="cs-box" aria-hidden="true">
+          <span class="cs-line cs-line1" aria-hidden="true"></span>
+          <span class="cs-line cs-line2" aria-hidden="true"></span>
+          <span class="cs-line cs-line3" aria-hidden="true"></span>
+        </div>
+      </button>
+      <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
+      <div class="cs-ul-wrapper">
+        <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
+          <li class="cs-li">
+            <a href="/" class="cs-li-link"> Home </a>
+          </li>
+          <li class="cs-li">
+            <a href="/about" class="cs-li-link"> About </a>
+          </li>
+          <li class="cs-li">
+            <a href="/services" class="cs-li-link"> Services </a>
+          </li>
+          <li class="cs-li">
+            <a href="/faq" class="cs-li-link"> FAQ </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <a href="/contact" class="cs-button-solid cs-nav-button">Contact Us</a>
+    <!--Dark Mode toggle, uncomment button code if you want to enable a dark mode toggle-->
+    <button id="dark-mode-toggle" aria-label="dark mode toggle">
+      <svg class="cs-moon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+      </svg>
+      
+      </svg>
+      <svg class="cs-sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+      </svg>      
+    </button>
+  </div>
+</header>
+
+    <main id="main">
+
+<!-- ============================================ -->
+<!--                    Hero                      -->
+<!-- ============================================ -->
+
+<section id="hero-143">
+  <div class="cs-container">
+    <h1 class="cs-title">
+      I turn online searches into customers for local businesses
+    </h1>
+    <p class="cs-text">
+      We build websites that bring you customers – so that you focus on running
+      your business.
+    </p>
+    <a href="/contact" class="cs-button-solid">Schedule a free consultation</a>
+  </div>
+
+  <!-- Background Image -->
+
+  <picture class="cs-background">
+    <source
+      media="(max-width: 600px)"
+      srcset="https://csimg.nyc3.digitaloceanspaces.com/Hero/kitchen-m.jpg"
+    />
+    <source
+      media="(min-width: 601px)"
+      srcset="https://csimg.nyc3.digitaloceanspaces.com/Hero/kitchen.jpg"
+    />
+    <img
+      loading="lazy"
+      decoding="async"
+      src="https://csimg.nyc3.digitaloceanspaces.com/Hero/kitchen.jpg"
+      alt="kitchen"
+      width="2250"
+      height="1500"
+      aria-hidden="true"
+    />
+  </picture>
+</section>
+
+  <!-- ============================================ -->
+  <!--                   Services                   -->
+  <!-- ============================================ -->
+
+  <section id="h-services-143">
+    <ul class="cs-card-group">
+      <li class="cs-item">
+        <picture class="cs-icon">
+          <img
+            loading="lazy"
+            decoding="async"
+            src="https://csimg.nyc3.digitaloceanspaces.com/Hero/buildings.svg"
+            alt="icon"
+            width="52"
+            height="52"
+            aria-hidden="true"
+          />
+        </picture>
+        <h2 class="cs-title">
+          Make It Easy for Your Ideal Clients to Find You
+        </h2>
+        <p class="cs-text">
+          When people search for your services, potential customers find you
+          first.
+        </p>
+      </li>
+      <li class="cs-item">
+        <picture class="cs-icon">
+          <img
+            loading="lazy"
+            decoding="async"
+            src="https://csimg.nyc3.digitaloceanspaces.com/Hero/toolbox.svg"
+            alt="icon"
+            width="52"
+            height="52"
+            aria-hidden="true"
+          />
+        </picture>
+        <h2 class="cs-title">Turn Visitors into Paying Clients</h2>
+        <p class="cs-text">
+          Your website guides potential clients straight to your inbox.
+        </p>
+      </li>
+      <li class="cs-item">
+        <picture class="cs-icon">
+          <img
+            loading="lazy"
+            decoding="async"
+            src="https://csimg.nyc3.digitaloceanspaces.com/Hero/user.svg"
+            alt="icon"
+            width="52"
+            height="52"
+            aria-hidden="true"
+          />
+        </picture>
+        <h2 class="cs-title">Build Trust Automatically</h2>
+        <p class="cs-text">
+          Showcase your best reviews, maintain a modern website, and update your
+          info.
+        </p>
+      </li>
+      <li class="cs-item">
+        <picture class="cs-icon">
+          <img
+            loading="lazy"
+            decoding="async"
+            src="https://csimg.nyc3.digitaloceanspaces.com/Hero/gear.svg"
+            alt="icon"
+            width="52"
+            height="52"
+            aria-hidden="true"
+          />
+        </picture>
+        <h2 class="cs-title">Save Time, Win More Business</h2>
+        <p class="cs-text">
+          Smart tools that handle the busy work so you can focus on clients.
+        </p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ============================================ -->
+  <!--                  Content                     -->
+  <!-- ============================================ -->
+
+  <section id="content-1637">
+    <div class="cs-container">
+      <div class="cs-content">
+        <div class="cs-flex">
+          <span class="cs-topper">About</span>
+          <h2 class="cs-title">Do you want customers to find you online?</h2>
+        </div>
+        <div class="cs-flex">
+          <h3 class="cs-h3">Why Work With Me</h3>
+          <p class="cs-text">
+            I help local businesses get more clients without getting bogged down
+            in tech complexity. My clients – from lawyers and therapists to
+            preschools and engineering firms – all have one thing in common:
+            they want to focus on serving their community, not technology
+            headaches.
+          </p>
+          <p class="cs-text">
+            Do you want to build trust online? Convert visitors into clients?
+            Stop worrying about tech problems? Saving time so you can focus on
+            running your business?
+          </p>
+          <a href="/about" class="cs-button-solid">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!--                   Services                   -->
+  <!-- ============================================ -->
+  <!-- 3 card Portfolio of client's sites -->
+  <!--
+<section id="services-38">
+  <div class="cs-container">
+    <ul class="cs-card-group">
+      <li class="cs-item">
+        <picture class="cs-picture">
+          <source
+            media="(max-width: 600px)"
+            srcset="
+              https://csimg.nyc3.digitaloceanspaces.com/Services/floral-m.jpg
+            "
+          />
+          <source
+            media="(min-width: 601px)"
+            srcset="
+              https://csimg.nyc3.digitaloceanspaces.com/Services/floral.jpg
+            "
+          />
+          <img
+            loading="lazy"
+            decoding="https://csimg.nyc3.digitaloceanspaces.com/Services/floral.jpg"
+            alt="living room"
+            width="348"
+            height="433"
+            aria-hidden="true"
+          />
+        </picture>
+        <div class="cs-box">
+          <h3 class="cs-h3">Floral <span>Arrangements</span></h3>
+          <p class="cs-item-text">
+            Ut enim ad minim veniam, quis nostrud exercitation laboris nisi ut
+            aliquip ex ea commodo.
+          </p>
+          <a
+            class="cs-link"
+            aria-label="read more about floral arrangements"
+            href=""
+            >Read More</a
+          >
+        </div>
+      </li>
+      <li class="cs-item">
+        <picture class="cs-picture">
+          <source
+            media="(max-width: 600px)"
+            srcset="
+              https://csimg.nyc3.digitaloceanspaces.com/Services/wedding-m.jpg
+            "
+          />
+          <source
+            media="(min-width: 601px)"
+            srcset="
+              https://csimg.nyc3.digitaloceanspaces.com/Services/wedding.jpg
+            "
+          />
+          <img
+            loading="lazy"
+            decoding="https://csimg.nyc3.digitaloceanspaces.com/Services/wedding.jpg"
+            alt="living room"
+            width="348"
+            height="433"
+            aria-hidden="true"
+          />
+        </picture>
+        <div class="cs-box">
+          <h3 class="cs-h3">Wedding <span>Photography</span></h3>
+          <p class="cs-item-text">
+            Ut enim ad minim veniam, quis nostrud exercitation laboris nisi ut
+            aliquip ex ea commodo.
+          </p>
+          <a
+            class="cs-link"
+            aria-label="read more about Wedding Photography"
+            href=""
+            >Read More</a
+          >
+        </div>
+      </li>
+      <li class="cs-item">
+        <picture class="cs-picture">
+          <source
+            media="(max-width: 600px)"
+            srcset="
+              https://csimg.nyc3.digitaloceanspaces.com/Services/wedding-cake-m.jpg
+            "
+          />
+          <source
+            media="(min-width: 601px)"
+            srcset="
+              https://csimg.nyc3.digitaloceanspaces.com/Services/wedding-cake.jpg
+            "
+          />
+          <img
+            loading="lazy"
+            decoding="https://csimg.nyc3.digitaloceanspaces.com/Services/wedding-cake.jpg"
+            alt="living room"
+            width="348"
+            height="433"
+            aria-hidden="true"
+          />
+        </picture>
+        <div class="cs-box">
+          <h3 class="cs-h3">Wedding <span>Cakes</span></h3>
+          <p class="cs-item-text">
+            Ut enim ad minim veniam, quis nostrud exercitation laboris nisi ut
+            aliquip ex ea commodo.
+          </p>
+          <a class="cs-link" aria-label="read more about wedding cakes" href=""
+            >Read More</a
+          >
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+-->
+  <!-- ============================================ -->
+  <!--                   Quote                      -->
+  <!-- ============================================ -->
+
+  <section id="quote-561">
+    <div class="cs-container">
+      <div class="cs-content">
+        <span class="cs-topper">Testimonial</span>
+        <p class="cs-quote">
+          Our board of directors couldn't be more pleased with the design of our
+          new website, highlighting our beautiful children. The design and
+          simplicity to navigate make it a perfect site for our target
+          population. She is extremely responsive via email or willing to have a
+          phone call...Anna has been a life saver! Thank you Anna!
+        </p>
+        <p class="cs-name">
+          Kiri Fluetsch, Executive Director of
+          <a
+            class="cs-name"
+            href="https://rccdp.org/about/management-and-staff/"
+            >Redwood City Child Development Program</a
+          >
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+<!--             Final Call to Action             -->
+<!-- ============================================ -->
+
+<section id="cta-1071">
+  <div class="cs-container">
+    <div class="cs-content">
+      <div class="cs-flex">
+        <span class="cs-topper"
+          >Grow Your Business, Not Your Website Headaches</span
+        >
+        <h2 class="cs-title">Stop Losing Customers to Your Competition</h2>
+      </div>
+      <div class="cs-button-box">
+        <!-- <a href="" class="cs-button-solid">Schedule a Free Consultation</a> -->
+        <a href="" class="cs-button-transparent"
+          >Schedule a Free Consultation</a
+        >
+      </div>
+    </div>
+  </div>
+  <picture class="cs-background">
+    <!--Mobile Image-->
+    <source media="(max-width: 600px)" srcset="/assets/images/cta-marble.jpg" />
+    <!--Tablet and above Image-->
+    <source media="(min-width: 601px)" srcset="/assets/images/cta-marble.jpg" />
+    <img
+      loading="lazy"
+      decoding="async"
+      src="/assets/images/cta-marble.jpg"
+      alt="mechanic"
+      width="1280"
+      height="568"
+    />
+  </picture>
+</section>
+ </main>
+    <!-- ============================================ -->
+<!--                   Footer                     -->
+<!-- ============================================ -->
+
+<footer id="cs-footer-107">
+  <div class="cs-container">
+    <ul class="cs-ul">
+      <li class="cs-li cs-copyright">Handcrafted by Lucky Pixels Design</li>
+      <li class="cs-li">
+        <a href="/" class="cs-link">Home</a>
+      </li>
+      <li class="cs-li">
+        <a href="/about" class="cs-link">About</a>
+      </li>
+      <li class="cs-li">
+        <a href="/services" class="cs-link">Services</a>
+      </li>
+      <li class="cs-li">
+        <a href="/faq" class="cs-link">FAQ</a>
+      </li>
+      <li class="cs-li">
+        <a href="/contact" class="cs-link">Contact</a>
+      </li>
+    </ul>
+  </div>
+</footer>
+
+  </body>
+</html>

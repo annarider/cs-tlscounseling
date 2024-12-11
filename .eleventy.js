@@ -83,6 +83,8 @@ module.exports = function (eleventyConfig) {
     });
     eleventyConfig.addPassthroughCopy("./src/admin");
     eleventyConfig.addPassthroughCopy("./src/_redirects");
+    eleventyConfig.addPassthroughCopy("./src/CNAME");
+
     /**=====================================================================
                               END PASSTHROUGHS
     =======================================================================*/
