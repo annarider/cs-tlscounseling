@@ -3,7 +3,6 @@ on:
   push:
     branches: [ main ]
 
-# Add this permissions block
 permissions:
   contents: read
   pages: write
@@ -12,9 +11,6 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v3
       
@@ -28,15 +24,21 @@ jobs:
         
       - name: Build
         run: npm run build
-
-      # Add these new steps
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
           path: './public'
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
         
       - name: Deploy to GitHub Pages
         id: deployment
