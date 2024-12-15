@@ -44,6 +44,7 @@
     position: relative;
     margin: 0 0 1rem 0;
     max-width: 43.75rem;
+    font-family: "Josefin Sans", "Nunito", "Arial", sans-serif;
     font-size: var(--headerFontSize);
     line-height: 1.2em;
     font-weight: 900;
@@ -191,53 +192,54 @@
   }
   // Grab your fonts to locally host from https://google-webfonts-helper.herokuapp.com/fonts
 
- /* josefin-sans-regular - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Josefin Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../fonts/josefin-sans-v32-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-/* nunito-regular - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Nunito';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../fonts/nunito-v26-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-/* nunito-italic - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Nunito';
-  font-style: italic;
-  font-weight: 400;
-  src: url('../fonts/nunito-v26-latin-italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-/* nunito-700 - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Nunito';
-  font-style: normal;
-  font-weight: 700;
-  src: url('../fonts/nunito-v26-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-
-/* Reset Margins */
-@media only screen and (min-width: 1024px) {
-  body,
-  html {
-    margin: 0;
-    padding: 0;
+  /* josefin-sans-regular - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Josefin Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/josefin-sans-v32-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
-}
+  /* nunito-regular - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/nunito-v26-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* nunito-italic - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Nunito";
+    font-style: italic;
+    font-weight: 400;
+    src: url("../fonts/nunito-v26-latin-italic.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* nunito-700 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../fonts/nunito-v26-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
 
-/* Scale full website with the viewport width */
-@media only screen and (min-width: 3000px) {
-  body,
-  html {
-    font-size: 0.55vw;
+  /* Reset Margins */
+  @media only screen and (min-width: 1024px) {
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  /* Scale full website with the viewport width */
+  @media only screen and (min-width: 3000px) {
+    body,
+    html {
+      font-size: 0.55vw;
+    }
   }
 }
 
@@ -351,7 +353,7 @@
     box-sizing: border-box;
     padding: (12/16rem) calc(16 / 16 * 1rem);
     /* remove the font family so the Stitch inherits the fonts from your global stylesheet */
-    font-family: "Roboto", "Arial", sans-serif;
+    font-family: "Nunito", "Arial", sans-serif;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
     .cs-container {
@@ -894,7 +896,7 @@
     box-sizing: border-box;
     padding: 0 (16/16rem);
     /* remove the font family so the Stitch inherits the fonts from your global stylesheet */
-    font-family: "Roboto", "Arial", sans-serif;
+    font-family: "Nunito", "Arial", sans-serif;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
     .cs-container {
@@ -1155,7 +1157,7 @@
 
     .cs-title {
       margin: 0;
-
+      font-family: "Josefin Sans", "Nunito", "Arial", sans-serif;
       color: var(--bodyTextColorWhite);
     }
 
