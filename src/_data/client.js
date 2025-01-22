@@ -1,21 +1,21 @@
 module.exports = {
-  name: "Lucky Pixels Design",
-  email: "anna@luckypixelsdesign.com",
-  phoneForTel: "303-335-9629",
-  phoneFormatted: "+1 (303) 335-9629",
+  name: "TLS Counseling LLC",
+  email: "Therapistterrence@gmail.com",
+  phoneForTel: "720-819-6672",
+  phoneFormatted: "+1 (720) -819-6672",
   address: {
-    lineOne: "2525 Arapahoe Ave",
-    lineTwo: "Suite E4-240",
-    city: "Boulder",
+    lineOne: "4700 E Iliff Ave",
+    lineTwo: "Suite 150",
+    city: "Denver",
     state: "CO",
-    zip: "80302",
+    zip: "80222",
     country: "US",
-    mapLink: "https://maps.app.goo.gl/A5YbxUzrSyqR4zrY6",
+    mapLink: "https://g.co/kgs/DsjFicw",
   },
   socials: {
     facebook: "https://www.facebook.com/",
     instagram: "https://www.instagram.com/",
   },
   //! Make sure you include the file protocol (e.g. https://) and that NO TRAILING SLASH is included
-  domain: "https://luckypixelsdesign.com",
+  domain: "https://www.tlscounselingllc.com",
 };
