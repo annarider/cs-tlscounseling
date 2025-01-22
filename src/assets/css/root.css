@@ -5,14 +5,14 @@
 /* CodeStitch Root and Helpers */
 @media only screen and (min-width: 0rem) {
   :root {
-    --primary: #0c4a6e;
-    --primaryLight: #0369a1;
-    --secondary: #0891b2;
-    --secondaryLight: #0891b2;
-    --secondaryDark: #0f172a;
-    --headerColor: #0c4a6e;
-    --bodyTextColor: #0f172a;
-    --bodyTextColorWhite: #f1f5f9;
+    --primary: #295B59;
+    --primaryLight: #4DABA6;
+    --secondary: #64748b;
+    --secondaryLight: #F1F5F9;
+    --secondaryDark: #295B59;
+    --headerColor: #295B59;
+    --bodyTextColor: #030712;
+    --bodyTextColorWhite: #EFF6F6;
     /* 13px - 16px */
     --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
     /* 31px - 49px */
