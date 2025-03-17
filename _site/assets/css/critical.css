@@ -29,8 +29,8 @@
       content: "";
       width: 100%;
       height: 100%;
-      background: #000;
-      opacity: 0.7;
+      background: var(--primary);
+      opacity: 0.2;
       position: absolute;
       display: block;
       top: 0;
@@ -61,7 +61,7 @@
       max-width: 51.8125rem;
       /* 16px - 24px */
       margin: 0 auto clamp(1rem, 4vw, 1.5rem) 0;
-      color: #fff;
+      color: var(--primaryLight);
       position: relative;
   }
   #hero-219 .cs-text {
@@ -75,7 +75,7 @@
       margin: 0 auto 0 0;
       /* 40px - 48px */
       margin-bottom: clamp(2.5rem, 4vw, 3rem);
-      color: #fff;
+      color: var(--primaryLight);
   }
   #hero-219 .cs-button-solid {
       font-size: 1rem;
