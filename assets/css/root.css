@@ -65,6 +65,7 @@
     font-size: 1rem;
     line-height: 3.125em;
     font-weight: bold;
+    border-radius: 0.25rem;
     transition: color 0.3s;
     transition-delay: 0.1s;
     text-align: center;
@@ -1207,5 +1208,29 @@
     margin: 0 0 0 auto;
     /* send to the right most position */
     order: 2;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 64rem) {
+  body.dark-mode   #cs-footer-107 {
+    background-color: var(--secondaryDark);
+    color: var(--primaryLight);
+  }
+ body.dark-mode #cs-footer-107 .cs-li-link:before {
+    background-color: var(--primaryLight);
+  }
+  body.dark-mode .cs-button-solid:before {
+    background: var(--buttonHoverDark);
+    /* Change the transition color */
+  }
+  body.dark-mode .cs-button-solid:hover {
+    color: #fff;
+    /* Ensure text remains visible */
+  }
+  body.dark-mode #cs-footer-107 .cs-link {
+    color: var(--primaryLight);
+  }
+  body.dark-mode #cs-footer-107 .cs-copyright {
+    color: var(--primaryLight);
   }
 }

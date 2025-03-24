@@ -1039,3 +1039,12 @@
       object-fit: cover;
   }
 }
+/* Dark Mode */
+@media only screen and (min-width: 64rem) {
+  body.dark-mode #cta-51 .cs-title {
+    color: var(--primaryLight);
+  }
+  body.dark-mode #cta-51 .cs-text {
+    color: var(--primaryLight);
+  }
+}
