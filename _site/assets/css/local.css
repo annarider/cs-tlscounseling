@@ -110,6 +110,10 @@
 @media only screen and (min-width: 0rem) {
   body.dark-mode #content-1637 {
     background-color: rgba(0, 0, 0, 0.6);
+    color: var(--primaryLight);
+  }
+  body.dark-mode #content-1637 .cs-button-solid:hover:before {
+    background-color: var(--primary);
   }
 /*-- -------------------------- -->
 <---          Services          -->
@@ -258,32 +262,8 @@
       left: 0;
       z-index: 1;
   }
-  #services-942 .cs-background img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      /* Makes img tag act as a background image */
-      object-fit: cover;
-  }
-  #services-942 .cs-waves {
-      width: 100%;
-      height: 13.875rem;
-      background-color: var(--primary);
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      z-index: -1;
-  }
-  #services-942 .cs-waves img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
-      top: 0;
-      left: 0;
-  }
+
+
 }
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
