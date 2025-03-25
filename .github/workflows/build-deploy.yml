@@ -25,15 +25,25 @@ jobs:
         
       - name: Build 11ty
         run: npm run build
-        
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-        
-      - name: Upload pages artifact
-        uses: actions/upload-pages-artifact@v1
+
+      # This is an explicit declaration of the dependency that's failing
+      - name: Setup artifact action
+        uses: actions/github-script@v6
         with:
-          path: '_site'
-          
+          script: |
+            const fs = require('fs');
+            fs.mkdirSync('./_site_artifact', { recursive: true });
+            fs.writeFileSync('./_site_artifact/artifact.tar', await require('@actions/artifact').create().uploadArtifact('github-pages', ['./_site'], null, {});
+      
+      - name: Upload artifact directly
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            const globber = require('@actions/glob');
+            const paths = await globber.create('_site/**').glob();
+            await require('@actions/artifact').create().uploadArtifact('github-pages', paths, '_site', {});
+            
   deploy:
     needs: build
     runs-on: ubuntu-latest
