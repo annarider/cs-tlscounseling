@@ -1,4 +1,4 @@
-name: Build & Deploy
+name: Build & Deploy 11ty Site
 
 on:
   push:
@@ -14,19 +14,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: '18'
+          
       - name: Install dependencies
         run: npm ci
-      - name: Build
+        
+      - name: Build 11ty
         run: npm run build
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+        
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          path: './public'
-
+          path: '_site'
+          
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -34,8 +41,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v1
